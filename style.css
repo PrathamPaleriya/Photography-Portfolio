@@ -1,3 +1,5 @@
+/* last upload: 12/5/24 */
+
 * {
   margin: 0;
   padding: 0;
@@ -6,11 +8,12 @@
   /* colors*/
   --white: #fcfbfd;
   --red-button: rgb(234, 10, 10);
+  --null: rgb(159, 159, 159);
 }
 
 body {
   background-color: var(--white);
-  height: 100vh;
+  height: 200vh;
 }
 
 .banner {
@@ -117,24 +120,17 @@ body:hover > #cursor {
   opacity: 1;
 }
 
-.light-background {
-  background-color: white; /* Cursor color for light backgrounds */
-}
-
-.dark-background {
-  background-color: black; /* Cursor color for dark backgrounds */
-}
-
 
 .navigation {
     display: none;
-    position: absolute;
-    height: 500px;
+    position: fixed;
+    height: 450px;
     background: black;
     width: 100%;
     top: 0;
     color: var(--white);
     animation: slideIn 0.3s forwards;
+    z-index: 5;
 }
 
 @keyframes slideIn {
@@ -206,3 +202,127 @@ body:hover > #cursor {
     color: var(--white);
 }
 
+.photo-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 30px;
+  align-items: center;
+}
+
+
+/* boxes */
+.box{
+  /* background: red; */
+  background: var(--null);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 70px;
+  cursor: pointer;
+}
+
+.box img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.plarge{
+  height: 707px;
+  width: 526px;
+}
+
+.pmedium{
+  width: 378px;
+  height: 500px;
+}
+
+.psmall{
+  width: 276px;
+  height: 373px;
+}
+
+.llarge{
+  width: 740px;
+  height: 520px;
+}
+
+.lmedium{
+  height: 378px;
+  width: 528px;
+}
+
+.lsmall{
+  height: 276px;
+  width: 400px;
+}
+
+
+
+/* alightment */
+.start{
+  justify-self: start;
+}
+
+.end{ 
+  justify-self: end;
+}
+
+.center{
+  justify-self: center;
+}
+
+.top{
+  align-self: start;
+}
+
+.bottom{
+  align-self: end;
+}
+
+.gsap-marker {
+  background-color: rgba(230, 17, 17, 0.855); /* Marker color */
+}
+
+
+/* footer */
+.footer{
+  align-content: end;
+  height: 19%;
+  margin-top: -40px;
+}
+
+.footer .footer-title{
+    position: relative;
+    display: inline-block;
+    width: 30%;
+    font-size: 80px;
+    line-height: 64px;
+    letter-spacing: -6px;
+    margin: 31px 10px;
+    font-weight: 500;
+}
+
+.footer-link {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 70px 300px 1fr;
+  margin: 0px 20px;
+}
+
+.footer-link a{
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  font-size: 18px;
+  margin-bottom: 25px;
+  margin-top: -10px;
+}
+
+
+.footer-link a:hover{
+  color: cyan;
+  transition: 0.2s;
+}
