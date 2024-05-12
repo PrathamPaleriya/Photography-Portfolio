@@ -68,9 +68,21 @@ function hideNavigation() {
   });
 
 
-// gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-// let smoother = ScrollSmoother.create({
-//     wrapper: '.photo-grid',
-//     content: '.box'
-// })
+const myText = new SplitType(".footer-title", {types: 'words'})
   
+gsap.to(".word", {
+    scrollTrigger: {
+      trigger: ".word",
+      markers: true,
+      end: "bottom bottom",
+      toggleAction: "restart",
+      scrub: 1
+    },
+    y: 0,
+    stagger: 0.1,
+    delay: 0.1,
+    duration: 0.3, 
+    onUpdate: function() {
+        console.log(this.targets()[0].style.y); // Log the value of the y property
+    }
+  });
