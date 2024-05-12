@@ -1,3 +1,6 @@
+// last upload: 12/5/24
+
+
 const trailer = document.getElementById("cursor");
 
 const animateTrailer = (e, interacting) => {
@@ -49,3 +52,25 @@ function hideNavigation() {
     }, 300);
   }
 
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.querySelectorAll('.box').forEach(box => {
+      gsap.to(box, {
+          scrollTrigger: {
+              trigger: box,
+              scrub: 2,
+              start: 'top center'
+          },
+          y: -100,
+          duration: 0.5
+      });
+  });
+
+
+// gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+// let smoother = ScrollSmoother.create({
+//     wrapper: '.photo-grid',
+//     content: '.box'
+// })
+  
