@@ -303,6 +303,8 @@ body:hover > #cursor {
     letter-spacing: -6px;
     margin: 31px 10px;
     font-weight: 500;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    overflow: hidden;
 }
 
 .footer-link {
@@ -325,4 +327,9 @@ body:hover > #cursor {
 .footer-link a:hover{
   color: cyan;
   transition: 0.2s;
+}
+
+.word{
+  transform: translateY(200px);
+  transition: transform 0.1s;
 }
