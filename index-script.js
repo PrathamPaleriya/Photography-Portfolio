@@ -73,7 +73,6 @@ const myText = new SplitType(".footer-title", {types: 'words'})
 gsap.to(".word", {
     scrollTrigger: {
       trigger: ".word",
-      markers: true,
       end: "bottom bottom",
       toggleAction: "restart",
       scrub: 1
